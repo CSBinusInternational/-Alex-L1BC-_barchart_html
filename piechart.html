@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Pie Chart</title>
+  <style type="text/css">
+      body {
+        background-image: url("https://media.istockphoto.com/photos/map-of-the-world-picture-id545645280?k=20&m=545645280&s=612x612&w=0&h=FbrgsL6OP2VTo8htaGSKjygnr0KhmX3D9yRhO1RK6ds=");
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      #my-pie-chart-container {
+        display: flex;
+        align-items: center;
+      }
+
+      #my-pie-chart {
+        background: conic-gradient(brown 0.00% 64.00%, black 64.00% 67.00% , blue 67.00% 74.00% , green 74.00% 77.00% , yellow 77.00% 80.00% , orange 80.00% 84.00% , red 84.00% 88.00% , rgb(252, 192, 203) 88.00% 90.00% , rgb(250, 128, 114) 90.00% 92.00%, rgb(107, 142, 35) 92.00% 94.00% , rgb(253, 218, 185) 94.00% 96.00% , rgb(221, 160, 221) 96.00% 97.00% , rgb(160, 82, 45) 97.00% 98.00% , rgb(26, 128, 127) 98.00% 99.00%, rgb(64, 224, 208) 99.00% 100.0%);
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+      }
+
+      #legenda {
+        margin-left: 20px;
+        background-color: white;
+        padding: 5px;
+      }
+
+      .entry {
+        display: flex;
+        align-items: center;
+      }
+
+      .entry-color {
+          height: 10px;
+          width: 10px;
+      }
+
+      .entry-text {
+        margin-left: 5px;
+      }
+
+      #color-red {
+        background-color: red;
+      }
+
+      #color-orange {
+        background-color: orange;
+      }
+
+      #color-yellow {
+        background-color: yellow;
+      }
+
+      #color-green {
+        background-color: green;
+      }
+
+      #color-blue {
+        background-color: blue;
+      }
+
+      #color-black {
+        background-color: black;
+      }
+
+      #color-brown {
+        background-color: brown;
+      }
+
+      #color-pink {
+        background-color: rgb(252, 192, 203);
+      }
+
+      #color-salmon {
+        background-color: rgb(250, 128, 114);
+      }
+
+      #color-olivebrad {
+        background-color: rgb(107, 142, 35);
+      }
+
+      #color-peach {
+        background-color: rgb(253, 218, 185);
+      }
+
+      #color-plum {
+        background-color: rgb(221, 160, 221);
+      }
+
+      #color-sienna {
+        background-color: rgb(160, 82, 45);
+      }
+
+      #color-steelblue {
+        background-color: rgb(70, 130, 180);
+      }
+
+      #color-teal {
+        background-color: rgb(26, 128, 127);
+      }
+
+      #color-turquoise {
+        background-color: rgb(64, 224, 208);
+      }
+
+    </style>
+</head>
+
+<body>
+    <h1>World population distribution</h1>
+
+  <div id="my-pie-chart-container">
+    <div id="my-pie-chart"></div>
+
+    <div id="legenda">
+      <div class="entry">
+        <div id="color-brown" class="entry-color"></div>
+        <div class="entry-text">New York, NY</div>
+      </div>
+      <div class="entry">
+        <div id="color-black" class="entry-color"></div>
+        <div class="entry-text">Hudson, NY</div>
+      </div>
+      <div class="entry">
+        <div id="color-blue" class="entry-color"></div>
+        <div class="entry-text">Brooklyn, NY</div>
+      </div>
+      <div class="entry">
+        <div id="color-green" class="entry-color"></div>
+        <div class="entry-text">Tuxedo Park, NY</div>
+      </div>
+      <div class="entry">
+        <div id="color-yellow" class="entry-color"></div>
+        <div class="entry-text">Greenport, NY</div>
+      </div>
+      <div class="entry">
+        <div id="color-orange" class="entry-color"></div>
+        <div class="entry-text">Ruotsinphytaa, Finland New York, NY</div>
+      </div>
+      <div class="entry">
+        <div id="color-red" class="entry-color"></div>
+        <div class="entry-text">Syria New York, NY</div>
+      <div class="entry">
+        <div id="color-pink" class="entry-color"></div>
+        <div class="entry-text">England Albion, NY</div>
+      <div class="entry">
+        <div id="color-salmon" class="entry-color"></div>
+        <div class="entry-text">Mamaroneck, NY</div>
+      <div class="entry">
+        <div id="color-olivebrad" class="entry-color"></div>
+        <div class="entry-text">Bronx, NY</div>
+      <div class="entry">
+        <div id="color-peach" class="entry-color"></div>
+        <div class="entry-text">Rochester, NY</div>
+      </div>
+      <div class="entry">
+        <div id="color-plum" class="entry-color"></div>
+        <div class="entry-text">Bayside, Queens, NY</div>
+      </div>
+      <div class="entry">
+        <div id="color-sienna" class="entry-color"></div>
+        <div class="entry-text">Cooperstown, NY</div>
+      </div>
+      <div class="entry">
+        <div id="color-teal" class="entry-color"></div>
+        <div class="entry-text">Albany, NY</div>
+      </div>
+      <div class="entry">
+        <div id="color-turquoise" class="entry-color"></div>
+        <div class="entry-text">Holley, NY</div>
+      </div>
+    </div>
+  </div>
+  <p style="position: absolute; top: 0;left: 20px;"> This Pie Chart is made for how many people come to NY in the data </p>
+  <p style="position: absolute; top: 280;left: 20px;"> New York = 64% </p>
+  <p style="position: absolute; top: 295;left: 20px;"> Hudson = 3% </p>
+  <p style="position: absolute; top: 310;left: 20px;"> Brooklyn = 7% </p>
+  <p style="position: absolute; top: 325;left: 20px;"> Tuxedo Park = 3% </p>
+  <p style="position: absolute; top: 340;left: 20px;"> Greenport = 3% </p>
+  <p style="position: absolute; top: 355;left: 20px;"> Ruotsinphytaa, Finland New York = 4% </p>
+  <p style="position: absolute; top: 370;left: 20px;"> Syria New York = 4% </p>
+  <p style="position: absolute; top: 385;left: 20px;"> England Albion = 2% </p>
+  <p style="position: absolute; top: 400;left: 20px;"> Mamaroneck = 2% </p>
+  <p style="position: absolute; top: 415;left: 20px;"> Bronx = 2% </p>
+  <p style="position: absolute; top: 430;left: 20px;"> Rochester = 2% </p>
+  <p style="position: absolute; top: 445;left: 20px;"> Bayside, Queens = 1% </p>
+  <p style="position: absolute; top: 460;left: 20px;"> Cooperstown = 1% </p>
+  <p style="position: absolute; top: 475;left: 20px;"> Albany = 1% </p>
+  <p style="position: absolute; top: 490;left: 20px;"> Holley = 1% </p> 
+</body>
+</html>
