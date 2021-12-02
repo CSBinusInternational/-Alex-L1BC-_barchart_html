@@ -16,21 +16,21 @@
             max-width: 250px;
         }
 
-        .quiz-graph {
+        .line-graph {
             padding: 10px; 
             height: 370px;
             width: 100%;
         }
 
-        .quiz-graph .x-labels {
+        .line-graph .x-labels {
             text-anchor: middle;
         }
 
-        .quiz-graph .y-labels {
+        .line-graph .y-labels {
             text-anchor: end;
         }
 
-        .quiz-graph .quiz-graph-grid {
+        .line-graph .line-graph-grid {
             stroke: #ccc;
             stroke-dasharray: 0;
             stroke-width: 1;
@@ -43,7 +43,7 @@
             fill: gray;
         }
 
-        .quiz-graph-dot, .quiz-graph-start-dot{
+        .line-graph-dot, .line-graph-start-dot{
             fill: rgba(0,112,210,1);
             stroke-width: 2;
             stroke: white;   
@@ -54,7 +54,7 @@
 <body>
     <div class="slds-p-top--medium">
       <div>
-          <svg version="1.2" class="quiz-graph">
+          <svg version="1.2" class="line-graph">
               <defs>
                   <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
                       <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#e5e5e5" stroke-width="1"></path>
@@ -111,13 +111,13 @@
               650,50
               "></polyline>
               <g>
-                  <circle class="quiz-graph-start-dot" cx="50" cy="300" data-value="7.2" r="6"></circle>
-                  <circle class="quiz-graph-dot" cx="150" cy="226" data-value="8.1" r="6" q-title="Q1" answer-count="24" percent-value="37%"></circle>
-                  <circle class="quiz-graph-dot" cx="250" cy="210" data-value="7.7" r="6" q-title="Q2" answer-count="28" percent-value="43%"></circle>
-                  <circle class="quiz-graph-dot" cx="350" cy="229" data-value="6.8" r="6" q-title="Q3" answer-count="23" percent-value="35%"></circle>
-                  <circle class="quiz-graph-dot" cx="450" cy="255" data-value="6.7" r="6" q-title="Q4" answer-count="19" percent-value="29%"></circle>
-                  <circle class="quiz-graph-dot" cx="550" cy="15" data-value="6.7" r="6" q-title="Q5" answer-count="64" percent-value="98%"></circle>
-                  <circle class="quiz-graph-dot" cx="650" cy="50" data-value="6.7" r="6" q-title="Q6" answer-count="60" percent-value="92%"></circle>
+                  <circle class="line-graph-start-dot" cx="50" cy="300" data-value="7.2" r="6"></circle>
+                  <circle class="line-graph-dot" cx="150" cy="226" data-value="8.1" r="6" q-title="Q1" answer-count="24" percent-value="37%"></circle>
+                  <circle class="line-graph-dot" cx="250" cy="210" data-value="7.7" r="6" q-title="Q2" answer-count="28" percent-value="43%"></circle>
+                  <circle class="line-graph-dot" cx="350" cy="229" data-value="6.8" r="6" q-title="Q3" answer-count="23" percent-value="35%"></circle>
+                  <circle class="line-graph-dot" cx="450" cy="255" data-value="6.7" r="6" q-title="Q4" answer-count="19" percent-value="29%"></circle>
+                  <circle class="line-graph-dot" cx="550" cy="15" data-value="6.7" r="6" q-title="Q5" answer-count="64" percent-value="98%"></circle>
+                  <circle class="line-graph-dot" cx="650" cy="50" data-value="6.7" r="6" q-title="Q6" answer-count="60" percent-value="92%"></circle>
               </g>
           </svg>
       </div>
