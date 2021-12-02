@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Column Chart</title>
+    <style type="text/css">
+        body {
+          font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+          background-image: url("https://media.istockphoto.com/photos/asian-couple-surfing-internet-on-mobile-phone-together-picture-id1175607813?k=20&m=1175607813&s=612x612&w=0&h=HjDhBRCw2eePMq3msKebWmtXpzwl1vdwHB1DT7Ti5BU=");
+        }
+
+        .container {
+              margin: 70px 50px;
+            }
+
+        .title {
+              padding-bottom: 20px;
+              font-size: large;
+              font-weight: bold;
+            }
+
+        .chart {
+              position: absolute;
+              transform: rotate(270deg);
+              left: 50px;
+              top: 750px;
+            }
+
+        .column-bars {
+              position: absolute;
+              top: 0;
+              left: 0;
+              display: grid;
+              grid-template-columns: repeat(20, 50px);
+              grid-template-rows: 270px;
+            }
+
+        cbars {
+              border: 1px solid rgb(187, 184, 184);
+              border-left: none;
+            }
+
+        cbars:first-child {
+              border: 1px solid rgb(187, 184, 184);
+            }
+
+        .row-bars {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 400px;
+            }
+
+        rbars {
+              display: block;
+              height: 20px;
+              margin-top: 20px;
+              max-width: 600px;
+              padding: 5px;
+            }
+
+        rbars:nth-child(1) {
+              background-color: rgb(255,0,0);
+            }
+
+        rbars:nth-child(2) {
+              background-color: rgb(221, 160, 221);
+            }            
+    </style>
+  </head>
+
+  <body>
+    <section class="container">
+      <div class="title">Simple Bar Chart</div>
+
+      <section class="chart">
+        <section class="column-bars">
+          <cbars></cbars>
+          <cbars>0</cbars>
+          <cbars>100</cbars>
+          <cbars>200</cbars>
+          <cbars>300</cbars>
+          <cbars>400</cbars>
+          <cbars>500</cbars>
+          <cbars>600</cbars>
+          <cbars>700</cbars>
+          <cbars>800</cbars>
+          <cbars>900</cbars>
+          <cbars>1000</cbars>
+        </section>
+
+        <section class="row-bars">
+          <rbars style="width:115%"> Male </rbars>
+          <rbars style="width:67%"> Female </rbars>
+        </section>
+      </section>
+
+    </section>
+
+    <p style="position: absolute; top: 0;left: 20px;"> This Column Chart is made for how many male and female in the data </p>
+    </body>
+</html>
