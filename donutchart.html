@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donut Chart</title>
+  <style>
+      :root {
+        --pi: 3.14159265359;
+        --a1: 22.8;
+        --a2: 77.2;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      html, body {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url("https://media.istockphoto.com/photos/brick-wall-painted-pink-and-green-background-full-frame-picture-id518146630?k=20&m=518146630&s=612x612&w=0&h=syQym6F5Y4malogq9hy7k5PJ4286G_GCAq4b2Pp8YVM=");
+        background-size: cover;
+      }
+
+      .container {
+        width: 800px;
+        height: 800px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      p {
+        position: absolute;
+        font-size: 80px;
+        font-weight: 800;
+        color: white;
+      }
+
+      svg {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      @keyframes percent1 {
+        to {
+          stroke-dasharray: calc(2 * var(--pi) * 300 * var(--a1) / 100) calc(2 * var(--pi) * 300 * calc(1 - var(--a1) / 100));
+        }
+      }
+
+      @keyframes percent2 {
+        to {
+          stroke-dasharray: calc(2 * var(--pi) * 300 * var(--a2) / 100) calc(2 * var(--pi) * 300 * calc(1 - var(--a2) / 100));
+        }
+      }
+
+      .donut {
+        transform-origin: center center;
+        transition: 0.5s ease-in-out;
+        stroke-dashoffset: 0;
+        cursor: pointer;
+      }
+
+      .donut:nth-child(1) {
+        transform: rotateZ(-90deg);
+        animation: percent1 1s ease-in-out forwards;
+      }
+
+      .donut:nth-child(2) {
+        transform: rotateZ(calc(-90deg  + calc(var(--a1) * 360deg / 100)));
+        animation: percent2 1s ease-in-out forwards;
+      }
+
+      .donut:hover {
+        stroke-width: 100;
+      }
+    </style>
+</head>
+
+<body>
+  <div class="container">
+    <p>Donut Chart</p>
+    <svg>
+      <circle  cx="400" cy="400" class="donut" r="300" stroke-width="60" stroke="#87CEEB" fill="none"/>
+      <circle  cx="400" cy="400" class="donut" r="300" stroke-width="60" stroke="#ffff00" fill="none"/>
+    </svg>
+  </div>
+  <p style="position: absolute; top: 0;left: 20px; font-size:20px;"> This Donut Chart is made for Embarked C and S </p>
+  <p style="position: absolute; top: 180px;left: 20px; font-size:20px;"> Yellow : Embarked S --> 77.2% </p>
+    <p style="position: absolute; top: 200px;left: 20px; font-size:20px;"> Blue : Embarked C --> 22.8% </p>
+</body>
+</html>
