@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Line Chart</title>
+  <style>
+    .quiz-chartTip {
+            padding: 5px 10px;
+            border: 1px solid rgba(0,0,0,.1);
+            border-radius: 4px;
+            background-color: rgba(255,255,255,.9);
+            box-shadow: 3px 3px 10px rgba(0,0,0,.1);
+            position: absolute;
+            z-index: 50;
+            max-width: 250px;
+        }
+
+        .quiz-graph {
+            padding: 10px; 
+            height: 370px;
+            width: 100%;
+        }
+
+        .quiz-graph .x-labels {
+            text-anchor: middle;
+        }
+
+        .quiz-graph .y-labels {
+            text-anchor: end;
+        }
+
+        .quiz-graph .quiz-graph-grid {
+            stroke: #ccc;
+            stroke-dasharray: 0;
+            stroke-width: 1;
+        }
+
+        .label-title {
+            text-anchor: middle;
+            text-transform: uppercase;
+            font-size: 12px;
+            fill: gray;
+        }
+
+        .quiz-graph-dot, .quiz-graph-start-dot{
+            fill: rgba(0,112,210,1);
+            stroke-width: 2;
+            stroke: white;   
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slds-p-top--medium">
+      <div>
+          <svg version="1.2" class="quiz-graph">
+              <defs>
+                  <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+                      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#e5e5e5" stroke-width="1"></path>
+                  </pattern>
+              </defs>
+              <rect x="50" width="calc(100% - 50px)" height="300px" fill="url(#grid)" stroke="gray"></rect>
+
+              <g class="label-title">
+                  <text x="-160" y="5" transform="rotate(-90)">Age Range</text>
+              </g>
+              <g class="label-title">
+                  <text x="50%" y="350">Participants</text>
+              </g>   
+              <g class="x-labels">
+                  <text x="150" y="320">Q1</text>
+                  <text x="250" y="320">Q2</text>
+                  <text x="350" y="320">Q3</text>
+                  <text x="450" y="320">Q4</text>
+                  <text x="550" y="320">Q5</text>
+                  <text x="650" y="320">Q6</text>
+              </g>
+              <g class="y-labels">
+                  <text x="42" y="5">65</text>   
+                  <text x="42" y="55">60</text>
+                  <text x="42" y="105">50</text>   
+                  <text x="42" y="155">40</text>
+                  <text x="42" y="205">30</text>   
+                  <text x="42" y="255">20</text>
+              </g>
+              <linearGradient id="grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" style="stop-color:rgba(99,224,238,.5);stop-opacity:1"></stop>
+                  <stop offset="100%" style="stop-color:white;stop-opacity:0"></stop>
+              </linearGradient>
+              <polyline fill="url(#grad)" stroke="#34becd" stroke-width="0" points="
+              50,300
+              51,300
+              150,226
+              250,210
+              350,229
+              450,255
+              550,15
+              650,50
+              750,200
+              750,300
+              "></polyline>
+
+              <polyline fill="none" stroke="#34becd" stroke-width="2" points="
+              50,300
+              150,226
+              250,210
+              350,229
+              450,255
+              550,15
+              650,50
+              "></polyline>
+              <g>
+                  <circle class="quiz-graph-start-dot" cx="50" cy="300" data-value="7.2" r="6"></circle>
+                  <circle class="quiz-graph-dot" cx="150" cy="226" data-value="8.1" r="6" q-title="Q1" answer-count="24" percent-value="37%"></circle>
+                  <circle class="quiz-graph-dot" cx="250" cy="210" data-value="7.7" r="6" q-title="Q2" answer-count="28" percent-value="43%"></circle>
+                  <circle class="quiz-graph-dot" cx="350" cy="229" data-value="6.8" r="6" q-title="Q3" answer-count="23" percent-value="35%"></circle>
+                  <circle class="quiz-graph-dot" cx="450" cy="255" data-value="6.7" r="6" q-title="Q4" answer-count="19" percent-value="29%"></circle>
+                  <circle class="quiz-graph-dot" cx="550" cy="15" data-value="6.7" r="6" q-title="Q5" answer-count="64" percent-value="98%"></circle>
+                  <circle class="quiz-graph-dot" cx="650" cy="50" data-value="6.7" r="6" q-title="Q6" answer-count="60" percent-value="92%"></circle>
+              </g>
+          </svg>
+      </div>
+  </div>
+  <p style="position: absolute; top: 0;left: 20px;"> This Line Chart is made for age range using Fortune's in their first name  </p>
+  <p style="position: absolute; top: 400px;left: 20px;"> Q1 : Fortune, Miss. Alice Elizabeth  </p>
+  <p style="position: absolute; top: 450px;left: 20px;"> Q2 : Fortune, Miss. Ethel Flora  </p>
+  <p style="position: absolute; top: 500px;left: 20px;"> Q3 : Fortune, Miss. Mabel Helen  </p>
+  <p style="position: absolute; top: 550px;left: 20px;"> Q4 : Fortune, Mr. Charles Alexander </p>
+  <p style="position: absolute; top: 600px;left: 20px;"> Q5 : Fortune, Mr. Mark  </p>
+  <p style="position: absolute; top: 650px;left: 20px;"> Q6 : Fortune, Mrs. Mark (Mary McDougald)  </p>
+</body>
+</html>
